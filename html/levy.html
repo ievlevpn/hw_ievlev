@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Lévy flight</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="p5.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+  <div class="header">
+    <h1>Симуляция случайных блужданий Леви</h1>
+    <p>к предельной теореме Леви</p>
+  </div>
+  <div class="row">
+    <div class="simulation" id="simulation">
+      <script src="levy-flights.js"></script>
+    </div>
+    <div class="text">
+      <p>
+      <a href="https://en.wikipedia.org/wiki/L%C3%A9vy_flight"><b>Lévy flights</b></a> -- это случайные блуждания
+	  \[
+	    S_n = \sum_{k = 1}^n \xi_k,
+	  \]
+	  в которых шаги \( \xi_k \) независимы, но имеют распределения с тяжёлыми хвостами. Если бы у \( \xi_k \) были конечны вторые моменты, то нормированные на \( \sqrt{n} \) суммы \( S_n \) сходились бы к гауссовской случайной величине согласно <a href="https://en.wikipedia.org/wiki/Lindeberg-Levy_Central_Limit_Theorem">центральной предельной теореме Линдеберга-Леви</a>.
+
+	  Более того, принцип инвариантности Донскера утверждает, что если построить по \( S_n \) линейную интерполяцию \( X_n (t, \omega ) \) в классе непрерывных функций, то такие аппроксимации сойдутся по распределению (в пространстве Винера) к броуновскому движению
+	  \[
+	    X_n \xrightarrow[]{d} w
+	  \]
+	  которое является <b>непрерывной</b> функцией.
+
+	  На демонстрации справа видно, что ни к какой непрерывной функции Lévy flights сходиться не могут. Однако процесс Леви всегда может быть выбран непрерывным справа и с конечными пределами слева.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
